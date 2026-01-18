@@ -14,7 +14,7 @@ const LogoutButton = () => {
     setLoading(true);
 
     await signOut();
-
+    router.push('/')
     // Delay added so animation is visible for a moment
     setTimeout(() => {
       window.location.reload();
