@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import React from 'react'
+"use client"
 import LinkButton from './ui/LinkButton'
 import { session } from '@/lib/server'
 import LogoutButton from './ui/LogoutButton'
+import { useSession } from '@/lib/auth-client'
 
 const Navigation = () => {
-    const user = session?.user;
+    const {data:session,isPending} = useSession()
     const links = [
         { href: '/', text: 'Home' },
         // { href: '/about', text: 'About' },
@@ -21,7 +21,10 @@ const Navigation = () => {
                 ))
             }
             {
-                user && <LogoutButton/>
+                session?.user && <LogoutButton/>
+            }
+            {
+                isPending && <p className='w-16 h-8 rounded-md bg-gray-100 animate-pulset'></p>
             }
         </div>
     </nav>
