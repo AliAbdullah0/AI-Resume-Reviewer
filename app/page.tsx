@@ -28,11 +28,11 @@ function HeroSection() {
             Sign Up
           </Button>
         </Link>
-        {/* <Link href="/sign-in">
+        <Link href="/sign-in">
           <Button variant="outline" className="px-6 py-2 border-black text-black hover:bg-gray-200">
             Sign In
           </Button>
-        </Link> */}
+        </Link>
       </div>
     </section>
   );

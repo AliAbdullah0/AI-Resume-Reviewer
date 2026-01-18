@@ -27,6 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { reviewResume } from "@/actions/files.actions";
+import { signOut } from "@/lib/auth-client";
 
 interface responseType {
   title: string;
@@ -110,6 +111,7 @@ export default function DashboardPage() {
           <p className="text-gray-600 max-w-md mx-auto">
             Upload your resume to get comprehensive analysis and improvement suggestions
           </p>
+
         </div>
 
         {!reviewResult ? (
